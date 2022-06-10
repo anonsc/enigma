@@ -1,6 +1,7 @@
 from pickle import TRUE
 import sys
 import re
+from tokenize import Name
 from weakref import ref
 import configparser
 import random
@@ -40,8 +41,10 @@ def scr_edit():
 
     i = 1
     
-    global scr_lis
-    
+    global scr_lis 
+
+    scr_lis = []
+
     while True:
         
         print('insert scrambler',i)
@@ -71,6 +74,8 @@ def scr_edit():
 def scr_set():
 
     global scr_set_lis 
+
+    scr_set_lis =[]
     
     i = 0 
     
@@ -161,5 +166,5 @@ while True:
         _input = input()
         eval(_input)()
         
-    except (TypeError,ValueError,SyntaxError):
+    except (TypeError,ValueError,SyntaxError,NameError):
         print('Error\nEnter "help" to display valid input values')
