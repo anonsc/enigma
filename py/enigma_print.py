@@ -9,12 +9,12 @@ inifile = configparser.ConfigParser()
 inifile.read('config.ini','UTF-8')
 
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-ScramblerSetting_list = inifile['General']['ScramblerSetting_list']
+Setting_list = inifile['General']['setting_list']
 Scrambler_list = inifile['General']['Scrambler_list']
 _ref = inifile['General']['Reflector']
 
 scr_lis = Scrambler_list.split(':')
-scr_set_lis = ScramblerSetting_list.split(':')
+scr_set_lis = Setting_list.split(':')
 
 
 def ref_edit():
@@ -117,7 +117,7 @@ def reflector (place):
 
 def enigma ():
     cipher = ''
-    set_lis = [int(s) for s in set_lis_a]
+    set_lis = [int(s) for s in scr_set_lis]
     original_text = input('文を入力\n')
     
     text = re.sub(r'[^a-zA-Z]','',original_text).upper()#英字のみ抽出,大文字に変換
