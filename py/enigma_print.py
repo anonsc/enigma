@@ -43,7 +43,7 @@ def scr_edit():
     
     global scr_lis 
 
-    scr_lis = []
+    scr_lis_prov =[]
 
     while True:
         
@@ -60,8 +60,10 @@ def scr_edit():
         if not set(_scr) == set(alphabet):
             print('error\n"random"is available')
             continue
-        scr_lis.append(_scr)
+        scr_lis_prov.append(_scr)
         i += 1
+
+    scr_lis = scr_lis_prov
 
     Scrambler_list = ':'.join(scr_lis)
     inifile['General']['Scrambler_list'] = Scrambler_list
@@ -154,7 +156,7 @@ def enigma ():
     print (cipher)
 
 def help():
-    print('ref_edit\nscr_edit\nscr_set\nenigma\nquit')
+    print('ref_edit\nscr_edit\nscr_set\nenigma\nquit\nsetting\n')
 
 def setting():
     print('Reflector:',_ref,'\nScranbler:',scr_lis,'\nscr_set:',scr_set_lis)
