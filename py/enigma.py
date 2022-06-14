@@ -163,10 +163,12 @@ def setting():
 #main
 print('hello')
 
+
 while True:
     try:
         _input = input()
         eval(_input)()
         
-    except (TypeError,ValueError,SyntaxError,NameError):
+    except :
         print('Error\nEnter "help" to display valid input values')
+        del _input
